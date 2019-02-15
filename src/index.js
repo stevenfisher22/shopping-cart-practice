@@ -6,13 +6,17 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
 import BaseLayout from './components/BaseLayout';
 
+const store = createStore();
+
 ReactDOM.render(
-    <BrowserRouter>
-        <BaseLayout>
-            <div>
-                Hello World
-            </div>
-        </BaseLayout>
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <BaseLayout>
+                <Switch>
+                    <Route exact path ="/" component={App}></Route>
+                </Switch>
+            </BaseLayout>
+        </BrowserRouter>
+    </Provider>
 , document.getElementById('root'));
 
