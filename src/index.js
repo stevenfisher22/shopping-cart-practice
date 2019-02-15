@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
 import BaseLayout from './components/BaseLayout';
+import cartReducer from './reducers/cartReducer';
 
-const store = createStore();
+const store = createStore(cartReducer);
 
 ReactDOM.render(
     <Provider store={store}>

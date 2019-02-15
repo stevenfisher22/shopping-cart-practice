@@ -1,10 +1,8 @@
 var deleteProduct = (id) => {
-    return (
-        {
-            type: 'deleteProduct',
-            productId: id
-        }
-    )
+    return {
+        type: 'deleteProduct',
+        productId: id
+    }
 }
 
 export default deleteProduct
