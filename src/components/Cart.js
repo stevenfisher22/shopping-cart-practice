@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import addProduct from '../actions/addProduct';
+import AddProducts from './AddProducts';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -9,9 +10,15 @@ class Cart extends React.Component {
     }
 
     render() {
+
+        // <div>
+        //     <AddProducts />
+        
+
         var product = this.props.productCart.map((product) => {
             return <li key={product.ProductName}>{product.productName}</li>
         })
+        {/* </div> */}
 
         return ( 
             <div>This is the Cart Component
@@ -22,7 +29,7 @@ class Cart extends React.Component {
                     {product}
                 </ul>
                 
-                <button onClick={() => {this.props.onAddProduct({productName: 'apples', productPrice: 2})}} >Click Me!</button>
+                <button onClick={() => {this.props.onAddProduct({productName: 'apples', productPrice: 2})}} >Add Product</button>
 
             </div>
         );
@@ -42,4 +49,4 @@ function mapDispatchToProps (dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(mapStateToProps, mapDispatchToProps)(AddProducts)
