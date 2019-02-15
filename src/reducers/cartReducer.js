@@ -8,4 +8,14 @@ function cartReducer (state, action) {
             }]
         }
     }
+    switch(action.type){
+        case 'addProduct':
+            return state;
+        case 'deleteProduct':
+            return state;
+        default: 
+            return state;
+    }
 }
+
+export default cartReducer

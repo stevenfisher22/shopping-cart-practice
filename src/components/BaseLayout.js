@@ -12,20 +12,22 @@ class BaseLayout extends React.Component {
             <div>
                 header
                 <table style={{width: 500}}>
-                    <tr>
-                        <td>
-                            Menu Items
-                            <ul>
-                                <li>
-                                    <Link link to="/">Home Page</Link>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            Content
-                            {this.props.children}
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Menu Items
+                                <ul>
+                                    <li>
+                                        <Link link to="/">Home Page</Link>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>
+                                Content
+                                {this.props.children}
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
                 <br />
                 footer

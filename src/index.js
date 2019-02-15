@@ -6,6 +6,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
 import BaseLayout from './components/BaseLayout';
 import cartReducer from './reducers/cartReducer';
+import deleteProduct from './actions/deleteProduct';
+import Cart from './components/Cart';
 
 const store = createStore(cartReducer);
 
@@ -14,10 +16,10 @@ ReactDOM.render(
         <BrowserRouter>
             <BaseLayout>
                 <Switch>
-                    <Route exact path ="/" component={App}></Route>
+                    <Route exact path ="/app" component={App}></Route>
+                    <Route path="/" component={Cart}></Route>
                 </Switch>
             </BaseLayout>
         </BrowserRouter>
     </Provider>
 , document.getElementById('root'));
-
