@@ -10,7 +10,14 @@ function cartReducer (state, action) {
     }
     switch(action.type){
         case 'addProduct':
-            return state;
+            console.log('inside reducer ' + action.productData.productName)
+            return {
+                ...state, 
+                productCart: state.productCart.concat({
+                    productName: action.productData.productName,
+                    productPrice: action.productData.productPrice
+                })
+            }
         case 'deleteProduct':
             return state;
         default: 
