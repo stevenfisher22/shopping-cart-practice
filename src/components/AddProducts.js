@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import addProduct from '../actions/addProduct';
 
-class AddProducts extends React.Component {
+class AddProduct extends React.Component {
     constructor(props) {
         super(props);
 
@@ -27,20 +27,27 @@ class AddProducts extends React.Component {
     render() {
         return (
             <div>
+                {this.state.productName}
+                <br />
                 <input 
                     type="text" 
                     placeholder="Product Name"
+                    onChange={this.productNameChange.bind(this)}
                 />
                 <br />
 
                 <input 
                     type="text" 
                     placeholder="Product Price"
+                    onChange={(e) => this.productPriceChange(e)}
                 />
-
                 <br />
+                {this.state.productPrice}
 
-                <button>Add Product</button>
+                <button onClick={() => this.props.onAddProduct({
+                    productName: this.state.productName,
+                    productPrice: this.state.productPrice
+                })}>Add Product</button>
             </div>
         );
     }
@@ -55,9 +62,9 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-        onAddProduct: (productData) => {dispatch(addProduct(productData))}
+        onAddProduct: (productData) => dispatch(addProduct(productData))
     }
 }
 
 
-export default AddProducts
+export default connect(mapStateToProps, mapDispatchToProps)(AddProduct)
