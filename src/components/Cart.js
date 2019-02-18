@@ -11,26 +11,21 @@ class Cart extends React.Component {
 
     render() {
 
-        // <div>
-        //     <AddProducts />
-        
-
         var product = this.props.productCart.map((product) => {
             return <li key={product.ProductName}>{product.productName}</li>
         })
-        {/* </div> */}
 
         return ( 
-            <div>This is the Cart Component
+            <div>
+                <AddProducts />
+                This is the Cart Component
                 <br />
                 {this.props.totalCost}
                 <br />
                 <ul>
                     {product}
                 </ul>
-                
                 <button onClick={() => {this.props.onAddProduct({productName: 'apples', productPrice: 2})}} >Add Product</button>
-
             </div>
         );
     }
