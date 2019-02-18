@@ -37,7 +37,11 @@ class Cart extends React.Component {
                     <tbody>
                         {
                             this.props.productCart.map((productData) =>{
-                                return 
+                                return <tr key={productData.productName}>
+                                    <td>{productData.productName}</td>
+                                    <td>{productData.productPrice}</td>
+                                    <td>Remove</td>
+                                </tr>
                             })
                         }
                     </tbody>

@@ -1,7 +1,10 @@
-var deleteProduct = (id) => {
+var deleteProduct = (item) => {
     return {
         type: 'deleteProduct',
-        productId: id
+        productData: {
+            productName: item.productName,
+            productPrice: item.productPrice
+        }
     }
 }
 
