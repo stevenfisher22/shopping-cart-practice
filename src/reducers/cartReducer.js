@@ -22,7 +22,15 @@ function cartReducer (state, action) {
                 })
             }
         case 'deleteProduct':
-            return state;
+            const updatedArray = state.productCart.filter(product => {
+                return product.productName !== action.productData.productName
+            })
+
+            return {
+                ...state, 
+                totalCost: state.totalCost - parseInt(action.productData.productName),
+                productCart: updatedArray
+            };
         default: 
             return state;
     }
