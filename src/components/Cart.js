@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import addProduct from '../actions/addProduct';
 import AddProducts from './AddProducts';
+import deleteProduct from '../actions/deleteProduct';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -19,6 +20,8 @@ class Cart extends React.Component {
             <div>
                 <AddProducts />
                 
+                <h2>Total Price {this.props.totalCost}</h2> 
+
                 <table>
                     {/* Table Header */}
                     <thead>
@@ -40,7 +43,7 @@ class Cart extends React.Component {
                                 return <tr key={productData.productName}>
                                     <td>{productData.productName}</td>
                                     <td>{productData.productPrice}</td>
-                                    <td>Remove</td>
+                                    <td onClick={()=> this.props.onDeleteProduct(productData)}>Remove</td>
                                 </tr>
                             })
                         }
@@ -67,7 +70,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-        onAddProduct: (productData) => {dispatch(addProduct(productData))}
+        onAddProduct: (productData) => {dispatch(addProduct(productData))},
+        onDeleteProduct: (productData) => {dispatch(deleteProduct(productData))}
     }
 }
 
