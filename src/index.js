@@ -11,9 +11,10 @@ import Cart from './components/Cart';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-const store = createStore(cartReducer, composeWithDevTools(
-    applyMiddleware(...middleware)
-    ));
+const store = createStore(
+    cartReducer, 
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
 
 ReactDOM.render(
     <Provider store={store}>
