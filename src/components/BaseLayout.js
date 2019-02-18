@@ -11,10 +11,10 @@ class BaseLayout extends React.Component {
         return (
             <div>
                 header
-                <table style={{width: 500}}>
+                <table >
                     <tbody>
                         <tr>
-                            <td>
+                            <td style={{width: 300}}>
                                 Menu Items
                                 <ul>
                                     <li>

@@ -18,14 +18,37 @@ class Cart extends React.Component {
         return ( 
             <div>
                 <AddProducts />
-                This is the Cart Component
+                
+                <table>
+                    {/* Table Header */}
+                    <thead>
+                        <tr>
+                            <td>
+                                Product Name
+                            </td>
+                            <td>
+                                Product Price
+                            </td>
+                            <td>
+                                #
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.props.productCart.map((productData) =>{
+                                return 
+                            })
+                        }
+                    </tbody>
+                </table>
+
                 <br />
                 {this.props.totalCost}
                 <br />
                 <ul>
                     {product}
                 </ul>
-                <button onClick={() => {this.props.onAddProduct({productName: 'apples', productPrice: 2})}} >Add Product</button>
             </div>
         );
     }
