@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import addProduct from '../actions/addProduct';
 
-class AddProduct extends React.Component {
+class AddProducts extends React.Component {
     constructor(props) {
         super(props);
 
@@ -67,4 +67,4 @@ function mapDispatchToProps (dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(AddProducts)
