@@ -21,8 +21,8 @@ ReactDOM.render(
         <BrowserRouter>
             <BaseLayout>
                 <Switch>
-                    <Route exact path ="/app" component={App}></Route>
-                    <Route path="/" component={Cart}></Route>
+                    <Route exact path="/" component={Cart} />
+                    <Route path ="/app" component={App} />
                 </Switch>
             </BaseLayout>
         </BrowserRouter>
