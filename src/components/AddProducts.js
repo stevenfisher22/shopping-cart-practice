@@ -34,7 +34,6 @@ class AddProducts extends React.Component {
                     placeholder="Product Name"
                     onChange={this.productNameChange.bind(this)}
                 />
-                <br />
 
                 <input 
                     type="text" 

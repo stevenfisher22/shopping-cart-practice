@@ -13,14 +13,13 @@ class Cart extends React.Component {
     render() {
 
         var product = this.props.productCart.map((product) => {
-            return <li key={product.ProductName}>{product.productName}</li>
+            return <li key={product.productName}>{product.productName}</li>
         })
 
         return ( 
             <div>
-                <AddProducts />
-                
                 <h2>Total Price {this.props.totalCost}</h2> 
+                <AddProducts />
 
                 <table>
                     {/* Table Header */}
@@ -49,13 +48,6 @@ class Cart extends React.Component {
                         }
                     </tbody>
                 </table>
-
-                <br />
-                {this.props.totalCost}
-                <br />
-                <ul>
-                    {product}
-                </ul>
             </div>
         );
     }
@@ -70,9 +62,9 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
     return {
-        onAddProduct: (productData) => {dispatch(addProduct(productData))},
-        onDeleteProduct: (productData) => {dispatch(deleteProduct(productData))}
+        onAddProduct: (productData) => dispatch(addProduct(productData)),
+        onDeleteProduct: (productData) => dispatch(deleteProduct(productData))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddProducts)
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

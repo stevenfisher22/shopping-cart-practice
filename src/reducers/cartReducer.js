@@ -7,11 +7,10 @@ function cartReducer (state, action) {
     }
     switch(action.type){
         case 'addProduct':
-            console.log('inside reducer ' + parseInt(action.productData.productName))
             return {
                 ...state, 
 
-                totalCost: state.totalCost + action.productData.productPrice,
+                totalCost: state.totalCost + parseInt(action.productData.productPrice),
 
                 productCart: state.productCart.concat({
                     productName: action.productData.productName,
@@ -25,7 +24,7 @@ function cartReducer (state, action) {
 
             return {
                 ...state, 
-                totalCost: state.totalCost - parseInt(action.productData.productName),
+                totalCost: state.totalCost - parseInt(action.productData.productPrice),
                 productCart: updatedArray
             };
         default: 

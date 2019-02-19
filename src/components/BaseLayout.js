@@ -10,7 +10,6 @@ class BaseLayout extends React.Component {
     render() {
         return (
             <div>
-                header
                 <table >
                     <tbody>
                         <tr>
@@ -18,7 +17,7 @@ class BaseLayout extends React.Component {
                                 Menu Items
                                 <ul>
                                     <li>
-                                        <Link link to="/">Home Page</Link>
+                                        <Link to="/">Home Page</Link>
                                     </li>
                                 </ul>
                             </td>
@@ -29,8 +28,6 @@ class BaseLayout extends React.Component {
                         </tr>
                     </tbody>
                 </table>
-                <br />
-                footer
             </div>
         );
     }
