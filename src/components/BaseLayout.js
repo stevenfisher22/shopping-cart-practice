@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 class BaseLayout extends React.Component {
     constructor(props) {
@@ -23,7 +23,6 @@ class BaseLayout extends React.Component {
                                 </ul>
                             </td > */}
                             <td>
-                                Content
                                 {this.props.children}
                             </td>
                         </tr>

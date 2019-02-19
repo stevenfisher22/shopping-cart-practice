@@ -18,7 +18,7 @@ class Cart extends React.Component {
 
         return ( 
             <div>
-                <h2>Total Price {this.props.totalCost}</h2> 
+                <h2>Total Price: ${this.props.totalCost}</h2> 
                 <AddProducts />
 
                 <table>
