@@ -32,7 +32,7 @@ class Cart extends React.Component {
                                 Product Price
                             </td>
                             <td>
-                                #
+                                Delete?
                             </td>
                         </tr>
                     </thead>
@@ -42,7 +42,7 @@ class Cart extends React.Component {
                                 return <tr key={productData.productName}>
                                     <td>{productData.productName}</td>
                                     <td>{productData.productPrice}</td>
-                                    <td onClick={()=> this.props.onDeleteProduct(productData)}>Remove</td>
+                                    <td onClick={()=> this.props.onDeleteProduct(productData)}>Delete</td>
                                 </tr>
                             })
                         }
